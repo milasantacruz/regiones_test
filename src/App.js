@@ -21,7 +21,7 @@ function App() {
 
   if(loading){
     return(
-      <h1>Loading....</h1>
+      <h1 className="loading">Loading....</h1>
     )
   }
 
@@ -42,7 +42,7 @@ function App() {
       <tbody>
       {listItems.map((e,i)=>{
         return(
-        <tr onClick={()=>{isClick(e)}} data-href="/">
+        <tr className="trr" onClick={()=>{isClick(e)}} data-href="/">
           <td>{i}</td>
           <td align="left">{e.VarCharValue}</td>
         </tr>
