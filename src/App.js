@@ -6,7 +6,15 @@ function App() {
   var[loading, setLoading]=useState(true);
   var[listItems, setListItems] = useState([]);
   useEffect(() => {
-    fetch("http://ec2-34-222-195-19.us-west-2.compute.amazonaws.com/api/downloads/regions?cliente=CIAL")
+    fetch("http://ec2-34-222-195-19.us-west-2.compute.amazonaws.com/api/downloads/regions?cliente=CIAL",{
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS"
+      }
+    })
       .then((response) => response.json())
       .then((list) => {
 
